@@ -33,7 +33,7 @@ const player = new Player(client, {
     },
 });
 
-// Load extractors cho YouTube, Spotify, SoundCloud
+// Load extractors cho YouTube, Spotify
 player. extractors. loadDefault();
 
 // ========================

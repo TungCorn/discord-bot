@@ -5,7 +5,7 @@ const { useMainPlayer } = require('discord-player');
 module.exports = {
     data: new SlashCommandBuilder()
         . setName('play')
-        .setDescription('🎵 Phát nhạc từ YouTube, Spotify, SoundCloud')
+        .setDescription('🎵 Phát nhạc từ YouTube, Spotify')
         .addStringOption(option =>
             option.setName('query')
                 .setDescription('Tên bài hát hoặc URL')

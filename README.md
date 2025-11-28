@@ -1,6 +1,6 @@
 # 🎵 Discord Music Bot
 
-Bot nhạc Discord thông minh, hiện đại - Hỗ trợ YouTube, Spotify, SoundCloud! 
+Bot nhạc Discord thông minh, hiện đại - Hỗ trợ YouTube, Spotify! 
 
 ![Discord.js](https://img.shields.io/badge/Discord.js-v14-blue)
 ![Node.js](https://img.shields.io/badge/Node.js-18+-green)
@@ -8,7 +8,7 @@ Bot nhạc Discord thông minh, hiện đại - Hỗ trợ YouTube, Spotify, Sou
 
 ## ✨ Tính năng
 
-- 🎶 Phát nhạc từ YouTube, Spotify, SoundCloud
+- 🎶 Phát nhạc từ YouTube, Spotify
 - 📋 Hệ thống hàng đợi thông minh
 - 🔀 Shuffle, Loop, Volume control
 - 🎨 Slash Commands hiện đại
