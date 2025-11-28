@@ -2,7 +2,7 @@
 
 Bot nhạc Discord thông minh, hiện đại - Hỗ trợ YouTube, Spotify, SoundCloud! 
 
-![Discord. js](https://img.shields.io/badge/Discord.js-v14-blue)
+![Discord. js](https://img. shields.io/badge/Discord. js-v14-blue)
 ![Node.js](https://img. shields.io/badge/Node.js-18+-green)
 ![License](https://img. shields.io/badge/License-MIT-yellow)
 
@@ -55,14 +55,14 @@ Bot nhạc Discord thông minh, hiện đại - Hỗ trợ YouTube, Spotify, Sou
 
 ```bash
 # Clone repository
-git clone https://github.com/TungCorn/discord-bot.git
+git clone https://github.com/TungCorn/discord-bot. git
 cd discord-bot
 
 # Cài đặt dependencies
 npm install
 
 # Tạo file .env
-cp .env. example .env
+copy .env.example . env
 # Điền DISCORD_TOKEN và CLIENT_ID vào file .env
 
 # Đăng ký slash commands
@@ -77,12 +77,12 @@ npm start
 1. **Tạo tài khoản** [Railway](https://railway.app/)
 2. Click **"New Project"** → **"Deploy from GitHub repo"**
 3.  Chọn repository `discord-bot`
-4. Vào **"Variables"** → Thêm:
+4.  Vào **"Variables"** → Thêm:
    - `DISCORD_TOKEN` = token của bot
    - `CLIENT_ID` = client id của bot
 5.  **Deploy tự động! ** 🎉
 
-### 🔐 Environment Variables
+## 🔐 Environment Variables
 
 | Variable | Mô tả | Bắt buộc |
 |----------|-------|----------|
@@ -102,7 +102,7 @@ discord-bot/
 │   │   └── utility/          # Các lệnh tiện ích
 │   ├── events/               # Discord events
 │   └── utils/                # Utility functions
-├── . env.example
+├── . env. example
 ├── package.json
 ├── railway.json              # Railway config
 ├── Dockerfile
@@ -111,14 +111,14 @@ discord-bot/
 
 ## ❓ FAQ
 
-**Q: Bot không phản hồi lệnh? **
+**Q: Bot không phản hồi lệnh?**
 A: Chạy `npm run deploy` để đăng ký slash commands. 
 
 **Q: Bot không phát được nhạc?**
 A: Kiểm tra bot có quyền `Connect` và `Speak` trong voice channel.
 
 **Q: Railway hết giờ miễn phí?**
-A: Free tier có 500 giờ/tháng.  Có thể upgrade lên Hobby ($5/tháng) để unlimited. 
+A: Free tier có 500 giờ/tháng.  Có thể upgrade lên Hobby ($5/tháng) để unlimited.
 
 ## 📄 License
 
@@ -126,4 +126,4 @@ MIT License - Tự do sử dụng và chỉnh sửa!
 
 ## 💖 Hỗ trợ
 
-Nếu thấy hữu ích, hãy ⭐ star repo này nhé!
+Nếu thấy hữu ích, hãy ⭐ star repo này nhé! 
