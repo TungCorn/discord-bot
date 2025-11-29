@@ -11,17 +11,17 @@ const commandFolders = fs.readdirSync(commandsPath);
 // Load tất cả commands
 for (const folder of commandFolders) {
     const folderPath = path.join(commandsPath, folder);
-    const commandFiles = fs.readdirSync(folderPath).filter(file => file.endsWith('. js'));
+    const commandFiles = fs.readdirSync(folderPath).filter(file => file.endsWith('.js'));
     
     for (const file of commandFiles) {
-        const command = require(path. join(folderPath, file));
+        const command = require(path.join(folderPath, file));
         if ('data' in command) {
-            commands. push(command.data. toJSON());
+            commands. push(command.data.toJSON());
         }
     }
 }
 
-const rest = new REST({ version: '10' }). setToken(process. env.DISCORD_TOKEN);
+const rest = new REST({ version: '10' }). setToken(process.env.DISCORD_TOKEN);
 
 (async () => {
     try {
