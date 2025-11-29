@@ -34,17 +34,17 @@ const player = new Player(client, {
 });
 
 // Load extractors cho YouTube, Spotify
-player. extractors. loadDefault();
+player.extractors.loadDefault();
 
 // ========================
 // 📁 LOAD COMMANDS
 // ========================
-const commandsPath = path. join(__dirname, 'commands');
+const commandsPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(commandsPath);
 
 for (const folder of commandFolders) {
-    const folderPath = path. join(commandsPath, folder);
-    const commandFiles = fs.readdirSync(folderPath). filter(file => file.endsWith('.js'));
+    const folderPath = path.join(commandsPath, folder);
+    const commandFiles = fs.readdirSync(folderPath).filter(file => file.endsWith('.js'));
     
     for (const file of commandFiles) {
         const filePath = path.join(folderPath, file);

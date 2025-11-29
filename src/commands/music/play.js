@@ -1,23 +1,21 @@
 // 🎵 Lệnh /play - Phát nhạc
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
-const { useMainPlayer } = require('discord-player');
+const { useMainPlayer, QueryType } = require('discord-player');
 
 module.exports = {
     data: new SlashCommandBuilder()
         . setName('play')
-        .setDescription('🎵 Phát nhạc từ YouTube, Spotify')
+        .setDescription('🎵 Phát nhạc từ YouTube')
         .addStringOption(option =>
             option.setName('query')
                 .setDescription('Tên bài hát hoặc URL')
-                .setRequired(true)
-                .setAutocomplete(true)),
+                .setRequired(true)),
 
     async execute(interaction) {
         const player = useMainPlayer();
         const query = interaction.options.getString('query');
         
-        // Kiểm tra user có trong voice channel không
-        const voiceChannel = interaction. member.voice.channel;
+        const voiceChannel = interaction.member.voice.channel;
         if (!voiceChannel) {
             return interaction.reply({
                 content: '❌ Bạn cần vào một kênh voice trước! ',
@@ -25,10 +23,9 @@ module.exports = {
             });
         }
 
-        // Kiểm tra quyền bot
-        const permissions = voiceChannel.permissionsFor(interaction.client.user);
+        const permissions = voiceChannel. permissionsFor(interaction.client.user);
         if (!permissions.has('Connect') || !permissions.has('Speak')) {
-            return interaction. reply({
+            return interaction.reply({
                 content: '❌ Bot không có quyền vào kênh voice này!',
                 ephemeral: true,
             });
@@ -37,15 +34,16 @@ module.exports = {
         await interaction. deferReply();
 
         try {
-            const { track } = await player. play(voiceChannel, query, {
+            const { track } = await player.play(voiceChannel, query, {
+                searchEngine: QueryType.YOUTUBE_SEARCH,
                 nodeOptions: {
                     metadata: {
                         channel: interaction.channel,
-                        requestedBy: interaction.user,
+                        requestedBy: interaction. user,
                     },
                     volume: 50,
                     leaveOnEmpty: true,
-                    leaveOnEmptyCooldown: 300000, // 5 phút
+                    leaveOnEmptyCooldown: 300000,
                     leaveOnEnd: false,
                     leaveOnEndCooldown: 300000,
                 },
@@ -53,12 +51,12 @@ module.exports = {
 
             const embed = new EmbedBuilder()
                 .setColor(0x00ff00)
-                . setTitle('✅ Đã thêm vào hàng đợi')
+                .setTitle('✅ Đã thêm vào hàng đợi')
                 .setDescription(`**[${track.title}](${track.url})**`)
                 . setThumbnail(track.thumbnail)
                 .addFields(
-                    { name: '👤 Ca sĩ', value: track.author, inline: true },
-                    { name: '⏱️ Thời lượng', value: track.duration, inline: true },
+                    { name: '👤 Ca sĩ', value: track.author || 'Unknown', inline: true },
+                    { name: '⏱️ Thời lượng', value: track.duration || 'N/A', inline: true },
                     { name: '🎧 Yêu cầu bởi', value: `${interaction.user}`, inline: true }
                 )
                 .setFooter({ text: '🎵 Discord Music Bot' })

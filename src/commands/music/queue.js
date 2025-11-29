@@ -1,5 +1,5 @@
 // 📋 Lệnh /queue - Xem hàng đợi nhạc
-const { SlashCommandBuilder, EmbedBuilder } = require('discord. js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { useQueue } = require('discord-player');
 
 module.exports = {
